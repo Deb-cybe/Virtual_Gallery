@@ -6,6 +6,7 @@ import "./App.css";
 import { Gallery } from "./components/Gallery";
 import { Search } from "./components/Search";
 // import { Toggle } from "./components/Toggle";
+import { NotFound } from "./components/NotFound";
 
 AOS.init();
 
@@ -19,9 +20,11 @@ function App() {
   const [image, setImage] = useState("dog");
   const search = (name, e) => {
     // alert(1);
-    console.log(name);
+    // console.log(name);
     e.preventDefault();
+
     setImage(name);
+    // console.log(result);
   };
   let arr = [];
 
@@ -41,13 +44,14 @@ function App() {
       }
       setResult(arr);
     });
+    // .catch(() => console.log(321));
   };
   const test = () => {
     const url =
       "https://api.unsplash.com/search/photos?page=1&per_page=30&query=" +
       image +
       "&client_id=" +
-      "JLe0bl5rvv-1Qsh79QDZw8VRP_-0kjGMU54kFqvoMRs";
+      "Jh9rfrzWuZMfv48bWTegRs4m4VUXz0ckpsEIwInXlKg";
 
     fetch(url);
   };
@@ -62,7 +66,7 @@ function App() {
           </p>
           <hr className="w-32 h-1 mx-auto  bg-gray-100 border-0 rounded my-6 dark:bg-gray-700"></hr>
           <Search />
-          <Gallery />
+          {result.length != 0 ? <Gallery /> : <NotFound />}
         </div>
       </AppContext.Provider>
     </>
