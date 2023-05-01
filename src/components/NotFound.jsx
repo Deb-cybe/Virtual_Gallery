@@ -1,6 +1,5 @@
 // import "./NotFound.css";
 export const NotFound = () => {
-  console.log(321);
   return (
     <>
       {/* <p className="text-center text-orange-400 text-2xl">Not Found</p> */}
