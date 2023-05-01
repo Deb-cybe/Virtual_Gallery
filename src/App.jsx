@@ -9,6 +9,11 @@ import { Search } from "./components/Search";
 import { NotFound } from "./components/NotFound";
 
 AOS.init();
+document.querySelectorAll("img").forEach((img) => {
+  img.addEventListener("load", () => {
+    AOS.refresh();
+  });
+});
 
 export const AppContext = createContext();
 
