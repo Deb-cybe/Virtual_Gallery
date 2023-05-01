@@ -4,7 +4,7 @@ export const NotFound = () => {
     <>
       {/* <p className="text-center text-orange-400 text-2xl">Not Found</p> */}
       <img
-        src="../../public/not_found.svg"
+        src="../public/not_found.svg"
         className="h-60 w-80 md:w-100 mx-auto"
       />
     </>
